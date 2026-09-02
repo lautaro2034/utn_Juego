@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Rajdhani:wght@500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #050814;
+  color: #eaf6ff;
+  font-family: Rajdhani, Arial, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(rgba(0, 229, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.055) 1px, transparent 1px),
+    radial-gradient(circle at 50% 20%, #12345d 0%, #07101f 35%, #03050c 75%);
+  background-size:
+    45px 45px,
+    45px 45px,
+    100% 100%;
+}
+.topbar {
+  height: 75px;
+  padding: 0 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 229, 255, 0.25);
+  background: rgba(3, 7, 17, 0.75);
+  backdrop-filter: blur(12px);
+}
+.brand {
+  font-family: Orbitron;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+.brand span {
+  color: #00e5ff;
+}
+.app {
+  width: min(1000px, 92%);
+  margin: auto;
+}
+.screen {
+  display: none;
+  min-height: calc(100vh - 75px);
+  align-items: center;
+  justify-content: center;
+  padding: 35px 0;
+}
+.screen.active {
+  display: flex;
+}
+.hero,
+.result-card {
+  width: min(650px, 100%);
+  text-align: center;
+  padding: 45px;
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  background: rgba(7, 15, 31, 0.82);
+  box-shadow:
+    0 0 45px rgba(0, 229, 255, 0.12),
+    inset 0 0 40px rgba(0, 229, 255, 0.03);
+  clip-path: polygon(
+    4% 0,
+    96% 0,
+    100% 5%,
+    100% 95%,
+    96% 100%,
+    4% 100%,
+    0 95%,
+    0 5%
+  );
+}
+.robot,
+.trophy {
+  font-size: 80px;
+  filter: drop-shadow(0 0 20px #00e5ff);
+}
+.eyebrow {
+  letter-spacing: 6px;
+  color: #00e5ff;
+  font-family: Orbitron;
+  font-size: 12px;
+}
+h1,
+h2 {
+  font-family: Orbitron;
+  margin: 15px 0;
+}
+.hero h1 {
+  font-size: clamp(32px, 7vw, 65px);
+  line-height: 1.1;
+}
+.hero h1 span {
+  color: #00e5ff;
+}
+.hero h2 {
+  letter-spacing: 6px;
+  font-size: 18px;
+  color: #a8b6c8;
+}
+.description {
+  font-size: 20px;
+  color: #b7c6d9;
+}
+input {
+  width: min(400px, 100%);
+  display: block;
+  margin: 30px auto 15px;
+  padding: 16px;
+  background: #030812;
+  border: 1px solid #00e5ff;
+  color: #fff;
+  font-family: Orbitron;
+  text-align: center;
+  outline: none;
+}
+button {
+  font-family: Orbitron;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+.primary-btn,
+.secondary-btn,
+.small-btn {
+  padding: 14px 25px;
+  margin: 6px;
+  border: 1px solid #00e5ff;
+}
+.primary-btn {
+  background: #00e5ff;
+  color: #001018;
+  font-weight: bold;
+}
+.primary-btn:hover {
+  box-shadow: 0 0 25px #00e5ff;
+  transform: translateY(-2px);
+}
+.secondary-btn,
+.small-btn {
+  background: transparent;
+  color: #bceeff;
+}
+.secondary-btn:hover,
+.small-btn:hover {
+  background: rgba(0, 229, 255, 0.12);
+}
+#gameScreen {
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.hud {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.stat {
+  background: rgba(7, 15, 31, 0.85);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  padding: 13px 16px;
+}
+.stat small {
+  display: block;
+  color: #71869d;
+  letter-spacing: 2px;
+}
+.stat strong {
+  font-family: Orbitron;
+  color: #00e5ff;
+}
+.progress-wrap {
+  margin: 20px 0;
+}
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-family: Orbitron;
+  color: #a8c7d7;
+}
+.progress {
+  height: 12px;
+  background: #0a1220;
+  border: 1px solid #28435a;
+}
+.progress div {
+  height: 100%;
+  width: 10%;
+  background: #00e5ff;
+  box-shadow: 0 0 15px #00e5ff;
+  transition: width 0.4s;
+}
+.game-card {
+  background: rgba(7, 15, 31, 0.92);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  padding: clamp(22px, 5vw, 50px);
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.08);
+}
+.question-number {
+  font-family: Orbitron;
+  color: #00e5ff;
+  font-size: 12px;
+  letter-spacing: 4px;
+}
+.game-card h2 {
+  font-size: clamp(25px, 4vw, 38px);
+  margin: 20px 0 30px;
+}
+.answers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.answer {
+  padding: 20px;
+  border: 1px solid #254960;
+  background: #081321;
+  color: #eaf6ff;
+  text-align: left;
+  font-size: 18px;
+  transition: 0.2s;
+}
+.answer:hover:not(:disabled) {
+  border-color: #00e5ff;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+  transform: translateY(-2px);
+}
+.answer:disabled {
+  cursor: default;
+}
+.correct {
+  background: #083b2b !important;
+  border-color: #31e58b !important;
+}
+.wrong {
+  background: #4a1320 !important;
+  border-color: #ff4565 !important;
+}
+.feedback {
+  height: 35px;
+  margin-top: 22px;
+  text-align: center;
+  font-family: Orbitron;
+  font-size: 18px;
+}
+.final-score {
+  font-family: Orbitron;
+  font-size: 80px;
+  color: #00e5ff;
+  text-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
+}
+#levelText {
+  font-size: 24px;
+}
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  z-index: 5;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal.show {
+  display: flex;
+}
+.modal-box {
+  position: relative;
+  width: min(600px, 100%);
+  max-height: 85vh;
+  overflow: auto;
+  background: #07101f;
+  border: 1px solid #00e5ff;
+  padding: 35px;
+}
+.close {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  background: none;
+  border: 0;
+  color: #fff;
+  font-size: 30px;
+}
+.ranking-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 1px solid #203548;
+  font-size: 19px;
+}
+.rank-1 {
+  color: #ffd84d;
+}
+.rank-2 {
+  color: #d7e0ea;
+}
+.rank-3 {
+  color: #e6a66c;
+}
+.rules li {
+  margin: 12px 0;
+  font-size: 18px;
+}
+@media (max-width: 650px) {
+  .hud {
+    grid-template-columns: 1fr 1fr;
+  }
+  .answers {
+    grid-template-columns: 1fr;
+  }
+  .hero,
+  .result-card {
+    padding: 30px 20px;
+  }
+  .brand {
+    font-size: 11px;
+  }
+  .small-btn {
+    padding: 10px;
+    font-size: 10px;
+  }
+}

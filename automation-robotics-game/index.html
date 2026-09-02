@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automation & Robotics - Cyber Challenge</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-grid"></div>
+
+<header class="topbar">
+  <div class="brand">🤖 <span>AUTOMATION</span> & ROBOTICS</div>
+  <button id="rankingBtn" class="small-btn">🏆 RANKING</button>
+</header>
+
+<main class="app">
+  <section id="startScreen" class="screen active">
+    <div class="hero">
+      <div class="robot">🤖</div>
+      <p class="eyebrow">SYSTEM ONLINE</p>
+      <h1>AUTOMATION &<br><span>ROBOTICS</span></h1>
+      <h2>CYBER CHALLENGE</h2>
+      <p class="description">Test your knowledge. Complete the mission. Reach the top of the ranking.</p>
+      <input id="username" maxlength="20" placeholder="ENTER YOUR USERNAME">
+      <button id="startBtn" class="primary-btn">▶ START MISSION</button>
+      <button id="rulesBtn" class="secondary-btn">HOW TO PLAY</button>
+    </div>
+  </section>
+
+  <section id="gameScreen" class="screen">
+    <div class="hud">
+      <div class="stat"><small>PLAYER</small><strong id="playerName">PLAYER</strong></div>
+      <div class="stat"><small>SCORE</small><strong id="score">0</strong></div>
+      <div class="stat"><small>STREAK</small><strong>🔥 <span id="streak">0</span></strong></div>
+      <div class="stat"><small>LIVES</small><strong id="lives">❤️❤️❤️</strong></div>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-label"><span id="questionCount">QUESTION 1/10</span><span id="timerText">20s</span></div>
+      <div class="progress"><div id="progressBar"></div></div>
+    </div>
+
+    <div class="game-card">
+      <div class="question-number">MISSION QUESTION</div>
+      <h2 id="questionText"></h2>
+      <div id="answers" class="answers"></div>
+      <div id="feedback" class="feedback"></div>
+    </div>
+  </section>
+
+  <section id="resultScreen" class="screen">
+    <div class="result-card">
+      <div class="trophy">🏆</div>
+      <p class="eyebrow">MISSION COMPLETE</p>
+      <h1 id="resultTitle">GAME OVER</h1>
+      <div class="final-score" id="finalScore">0</div>
+      <p id="levelText"></p>
+      <p id="bestStreakText"></p>
+      <button id="playAgainBtn" class="primary-btn">🔄 PLAY AGAIN</button>
+      <button id="resultRankingBtn" class="secondary-btn">🏆 VIEW RANKING</button>
+    </div>
+  </section>
+</main>
+
+<div id="modal" class="modal">
+  <div class="modal-box">
+    <button class="close" id="closeModal">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script type="module" src="firebase-config.js"></script>
+<script type="module" src="script.js"></script>
+</body>
+</html>
